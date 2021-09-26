@@ -7,6 +7,42 @@
 // GraphQL fragment: ProductPricingField
 // ====================================================
 
+export interface ProductPricingField_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductPricingField_pricing_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductPricingField_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductPricingField_pricing_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductPricingField_pricing_discount_net;
+}
+
 export interface ProductPricingField_pricing_priceRangeUndiscounted_start_gross {
   __typename: "Money";
   /**
@@ -181,6 +217,10 @@ export interface ProductPricingField_pricing {
    * Whether it is in sale or not.
    */
   onSale: boolean | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductPricingField_pricing_discount | null;
   /**
    * The undiscounted price range of the product variants.
    */

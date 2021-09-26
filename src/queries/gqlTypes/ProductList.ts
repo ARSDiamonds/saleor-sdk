@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ProductOrder, ProductFilterInput } from "./../../gqlTypes/globalTypes";
+import { ProductOrder, ProductFilterInput, ProductMediaType } from "./../../gqlTypes/globalTypes";
 
 // ====================================================
 // GraphQL query operation: ProductList
@@ -27,6 +27,56 @@ export interface ProductList_products_edges_node_thumbnail2x {
    * The URL of the image.
    */
   url: string;
+}
+
+export interface ProductList_products_edges_node_media {
+  __typename: "ProductMedia";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  /**
+   * The URL of the media.
+   */
+  url: string;
+  alt: string;
+  type: ProductMediaType;
+}
+
+export interface ProductList_products_edges_node_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricing_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricing_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricing_discount_net;
 }
 
 export interface ProductList_products_edges_node_pricing_priceRangeUndiscounted_start_gross {
@@ -204,6 +254,10 @@ export interface ProductList_products_edges_node_pricing {
    */
   onSale: boolean | null;
   /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductList_products_edges_node_pricing_discount | null;
+  /**
    * The undiscounted price range of the product variants.
    */
   priceRangeUndiscounted: ProductList_products_edges_node_pricing_priceRangeUndiscounted | null;
@@ -239,6 +293,10 @@ export interface ProductList_products_edges_node {
    * The main thumbnail for a product.
    */
   thumbnail2x: ProductList_products_edges_node_thumbnail2x | null;
+  /**
+   * List of media for the product.
+   */
+  media: ProductList_products_edges_node_media[] | null;
   /**
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */

@@ -17,6 +17,12 @@ export const baseProductFragment = gql`
     thumbnail2x: thumbnail(size: 510) {
       url
     }
+    media {
+      id
+      url
+      alt
+      type
+    }
   }
 `;
 
@@ -41,10 +47,11 @@ export const productVariantFragment = gql`
     sku
     name
     quantityAvailable(countryCode: $countryCode)
-    images {
+    media {
       id
       url
       alt
+      type
     }
     pricing {
       onSale
@@ -75,6 +82,9 @@ export const productPricingFragment = gql`
   fragment ProductPricingField on Product {
     pricing {
       onSale
+      discount {
+        ...Price
+      }
       priceRangeUndiscounted {
         start {
           ...Price
@@ -121,10 +131,6 @@ export const productFragment = gql`
           }
         }
       }
-    }
-    images {
-      id
-      url
     }
     attributes {
       ...SelectedAttributeFields

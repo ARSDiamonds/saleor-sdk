@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { ProductMediaType } from "./../../gqlTypes/globalTypes";
+
 // ====================================================
 // GraphQL fragment: BaseProduct
 // ====================================================
@@ -25,6 +27,20 @@ export interface BaseProduct_thumbnail2x {
    * The URL of the image.
    */
   url: string;
+}
+
+export interface BaseProduct_media {
+  __typename: "ProductMedia";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  /**
+   * The URL of the media.
+   */
+  url: string;
+  alt: string;
+  type: ProductMediaType;
 }
 
 export interface BaseProduct {
@@ -53,4 +69,8 @@ export interface BaseProduct {
    * The main thumbnail for a product.
    */
   thumbnail2x: BaseProduct_thumbnail2x | null;
+  /**
+   * List of media for the product.
+   */
+  media: BaseProduct_media[] | null;
 }

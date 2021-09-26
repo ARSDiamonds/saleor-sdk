@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { ProductMediaType } from "./../../gqlTypes/globalTypes";
+
 // ====================================================
 // GraphQL fragment: ProductDetails
 // ====================================================
@@ -25,6 +27,56 @@ export interface ProductDetails_thumbnail2x {
    * The URL of the image.
    */
   url: string;
+}
+
+export interface ProductDetails_media {
+  __typename: "ProductMedia";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  /**
+   * The URL of the media.
+   */
+  url: string;
+  alt: string;
+  type: ProductMediaType;
+}
+
+export interface ProductDetails_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricing_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricing_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricing_discount_net;
 }
 
 export interface ProductDetails_pricing_priceRangeUndiscounted_start_gross {
@@ -202,6 +254,10 @@ export interface ProductDetails_pricing {
    */
   onSale: boolean | null;
   /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductDetails_pricing_discount | null;
+  /**
    * The undiscounted price range of the product variants.
    */
   priceRangeUndiscounted: ProductDetails_pricing_priceRangeUndiscounted | null;
@@ -229,6 +285,56 @@ export interface ProductDetails_category_products_edges_node_thumbnail2x {
    * The URL of the image.
    */
   url: string;
+}
+
+export interface ProductDetails_category_products_edges_node_media {
+  __typename: "ProductMedia";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  /**
+   * The URL of the media.
+   */
+  url: string;
+  alt: string;
+  type: ProductMediaType;
+}
+
+export interface ProductDetails_category_products_edges_node_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricing_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricing_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricing_discount_net;
 }
 
 export interface ProductDetails_category_products_edges_node_pricing_priceRangeUndiscounted_start_gross {
@@ -406,6 +512,10 @@ export interface ProductDetails_category_products_edges_node_pricing {
    */
   onSale: boolean | null;
   /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductDetails_category_products_edges_node_pricing_discount | null;
+  /**
    * The undiscounted price range of the product variants.
    */
   priceRangeUndiscounted: ProductDetails_category_products_edges_node_pricing_priceRangeUndiscounted | null;
@@ -452,6 +562,10 @@ export interface ProductDetails_category_products_edges_node {
    */
   thumbnail2x: ProductDetails_category_products_edges_node_thumbnail2x | null;
   /**
+   * List of media for the product.
+   */
+  media: ProductDetails_category_products_edges_node_media[] | null;
+  /**
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductDetails_category_products_edges_node_pricing | null;
@@ -483,18 +597,6 @@ export interface ProductDetails_category {
    * List of products in the category.
    */
   products: ProductDetails_category_products | null;
-}
-
-export interface ProductDetails_images {
-  __typename: "ProductImage";
-  /**
-   * The ID of the image.
-   */
-  id: string;
-  /**
-   * The URL of the image.
-   */
-  url: string;
 }
 
 export interface ProductDetails_attributes_attribute {
@@ -537,20 +639,18 @@ export interface ProductDetails_attributes {
   values: (ProductDetails_attributes_values | null)[];
 }
 
-export interface ProductDetails_variants_images {
-  __typename: "ProductImage";
+export interface ProductDetails_variants_media {
+  __typename: "ProductMedia";
   /**
-   * The ID of the image.
+   * The ID of the object.
    */
   id: string;
   /**
-   * The URL of the image.
+   * The URL of the media.
    */
   url: string;
-  /**
-   * The alt text of the image.
-   */
-  alt: string | null;
+  alt: string;
+  type: ProductMediaType;
 }
 
 export interface ProductDetails_variants_pricing_priceUndiscounted_gross {
@@ -698,9 +798,9 @@ export interface ProductDetails_variants {
    */
   quantityAvailable: number;
   /**
-   * List of images for the product variant.
+   * List of media for the product variant.
    */
-  images: (ProductDetails_variants_images | null)[] | null;
+  media: ProductDetails_variants_media[] | null;
   /**
    * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
    */
@@ -738,15 +838,15 @@ export interface ProductDetails {
    */
   thumbnail2x: ProductDetails_thumbnail2x | null;
   /**
+   * List of media for the product.
+   */
+  media: ProductDetails_media[] | null;
+  /**
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductDetails_pricing | null;
   description: any | null;
   category: ProductDetails_category | null;
-  /**
-   * List of images for the product.
-   */
-  images: (ProductDetails_images | null)[] | null;
   /**
    * List of attributes assigned to this product.
    */
