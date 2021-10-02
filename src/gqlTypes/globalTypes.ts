@@ -56,6 +56,21 @@ export enum AddressTypeEnum {
 /**
  * An enumeration.
  */
+export enum AttributeInputTypeEnum {
+  BOOLEAN = "BOOLEAN",
+  DATE = "DATE",
+  DATE_TIME = "DATE_TIME",
+  DROPDOWN = "DROPDOWN",
+  FILE = "FILE",
+  MULTISELECT = "MULTISELECT",
+  NUMERIC = "NUMERIC",
+  REFERENCE = "REFERENCE",
+  RICH_TEXT = "RICH_TEXT",
+}
+
+/**
+ * An enumeration.
+ */
 export enum CheckoutErrorCode {
   BILLING_ADDRESS_NOT_SET = "BILLING_ADDRESS_NOT_SET",
   CHANNEL_INACTIVE = "CHANNEL_INACTIVE",

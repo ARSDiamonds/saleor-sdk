@@ -32,6 +32,7 @@ export const selectedAttributeFragment = gql`
       id
       name
       slug
+      inputType
     }
     values {
       id

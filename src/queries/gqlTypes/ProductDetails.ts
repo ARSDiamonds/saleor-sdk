@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { CountryCode, VariantAttributeScope, ProductMediaType } from "./../../gqlTypes/globalTypes";
+import { CountryCode, VariantAttributeScope, ProductMediaType, AttributeInputTypeEnum } from "./../../gqlTypes/globalTypes";
 
 // ====================================================
 // GraphQL query operation: ProductDetails
@@ -613,6 +613,10 @@ export interface ProductDetails_product_attributes_attribute {
    * Internal representation of an attribute name.
    */
   slug: string | null;
+  /**
+   * The input type to use for entering attribute values in the dashboard.
+   */
+  inputType: AttributeInputTypeEnum | null;
 }
 
 export interface ProductDetails_product_attributes_values {
