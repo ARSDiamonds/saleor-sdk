@@ -759,6 +759,10 @@ export interface ProductDetails_variants_attributes_attribute {
    * Internal representation of an attribute name.
    */
   slug: string | null;
+  /**
+   * The input type to use for entering attribute values in the dashboard.
+   */
+  inputType: AttributeInputTypeEnum | null;
 }
 
 export interface ProductDetails_variants_attributes_values {
