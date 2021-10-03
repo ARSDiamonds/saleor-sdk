@@ -37,6 +37,7 @@ export const selectedAttributeFragment = gql`
     values {
       id
       name
+      slug
     }
   }
 `;
@@ -74,6 +75,7 @@ export const productVariantFragment = gql`
         id
         name
         value: name
+        slug
       }
     }
   }

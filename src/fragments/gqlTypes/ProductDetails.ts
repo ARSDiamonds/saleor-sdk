@@ -629,6 +629,10 @@ export interface ProductDetails_attributes_values {
    * Name of a value displayed in the interface.
    */
   name: string | null;
+  /**
+   * Internal representation of a value (unique per attribute).
+   */
+  slug: string | null;
 }
 
 export interface ProductDetails_attributes {
@@ -779,6 +783,10 @@ export interface ProductDetails_variants_attributes_values {
    * Name of a value displayed in the interface.
    */
   value: string | null;
+  /**
+   * Internal representation of a value (unique per attribute).
+   */
+  slug: string | null;
 }
 
 export interface ProductDetails_variants_attributes {
