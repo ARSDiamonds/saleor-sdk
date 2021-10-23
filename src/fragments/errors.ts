@@ -23,3 +23,11 @@ export const accountErrorFragment = gql`
     message
   }
 `;
+
+export const reviewErrorFragment = gql`
+  fragment ReviewError on ReviewError {
+    code
+    field
+    message
+  }
+`;

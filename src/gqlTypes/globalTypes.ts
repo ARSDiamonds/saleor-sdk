@@ -1234,6 +1234,22 @@ export enum ProductOrderField {
   TYPE = "TYPE",
 }
 
+/**
+ * An enumeration.
+ */
+export enum ReviewErrorCode {
+  ALREADY_EXISTS = "ALREADY_EXISTS",
+  DUPLICATED_INPUT_ITEM = "DUPLICATED_INPUT_ITEM",
+  GRAPHQL_ERROR = "GRAPHQL_ERROR",
+  INVALID = "INVALID",
+  NOT_FOUND = "NOT_FOUND",
+  REQUIRED = "REQUIRED",
+  REVIEW_WITHOUT_PRODUCT = "REVIEW_WITHOUT_PRODUCT",
+  REVIEW_WITHOUT_RATING = "REVIEW_WITHOUT_RATING",
+  REVIEW_WITHOUT_USER = "REVIEW_WITHOUT_USER",
+  UNIQUE = "UNIQUE",
+}
+
 export enum StockAvailability {
   IN_STOCK = "IN_STOCK",
   OUT_OF_STOCK = "OUT_OF_STOCK",
@@ -1363,6 +1379,14 @@ export interface ProductOrder {
 export interface ProductStockFilterInput {
   warehouseIds?: string[] | null;
   quantity?: IntRangeInput | null;
+}
+
+export interface ReviewInput {
+  rating?: number | null;
+  comment?: string | null;
+  product?: string | null;
+  user?: string | null;
+  isPublished?: boolean | null;
 }
 
 //==============================================================

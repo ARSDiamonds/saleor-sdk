@@ -827,6 +827,32 @@ export interface ProductDetails_variants {
   attributes: ProductDetails_variants_attributes[];
 }
 
+export interface ProductDetails_productReviews_reviewList_user {
+  __typename: "User";
+  firstName: string;
+  lastName: string;
+}
+
+export interface ProductDetails_productReviews_reviewList {
+  __typename: "Review";
+  rating: number;
+  comment: string;
+  created: any;
+  user: ProductDetails_productReviews_reviewList_user;
+}
+
+export interface ProductDetails_productReviews {
+  __typename: "ProductReviews";
+  /**
+   * Average rating of the product.
+   */
+  averageRating: number | null;
+  /**
+   * List of review of the product.
+   */
+  reviewList: (ProductDetails_productReviews_reviewList | null)[] | null;
+}
+
 export interface ProductDetails {
   __typename: "Product";
   /**
@@ -875,4 +901,8 @@ export interface ProductDetails {
    * Whether the product is in stock and visible or not.
    */
   isAvailable: boolean | null;
+  /**
+   * Product reviews and rating of the product.
+   */
+  productReviews: ProductDetails_productReviews | null;
 }

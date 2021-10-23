@@ -109,11 +109,47 @@ export const productPricingFragment = gql`
   }
 `;
 
+export const reviewFragment = gql`
+  fragment ReviewDetails on Review {
+    rating
+    comment
+    created
+    isPublished
+    user {
+      id
+      firstName
+      lastName
+    }
+    product {
+      id
+      name
+    }
+  }
+`;
+
+export const productReviewsFragment = gql`
+  fragment ProductReviews on Product {
+    productReviews {
+      averageRating
+      reviewList {
+        rating
+        comment
+        created
+        user {
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+`;
+
 export const productFragment = gql`
   ${baseProductFragment}
   ${selectedAttributeFragment}
   ${productVariantFragment}
   ${productPricingFragment}
+  ${productReviewsFragment}
   fragment ProductDetails on Product {
     ...BaseProduct
     ...ProductPricingField
@@ -143,5 +179,6 @@ export const productFragment = gql`
       ...ProductVariantFields
     }
     isAvailable
+    ...ProductReviews
   }
 `;
