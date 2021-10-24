@@ -130,6 +130,24 @@ export interface UserDetails_me_addresses {
   isDefaultShippingAddress: boolean | null;
 }
 
+export interface UserDetails_me_wishlist_items {
+  __typename: "WishlistItemCountableConnection";
+  /**
+   * A total count of items in the collection.
+   */
+  totalCount: number | null;
+}
+
+export interface UserDetails_me_wishlist {
+  __typename: "Wishlist";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  createdAt: any;
+  items: UserDetails_me_wishlist_items;
+}
+
 export interface UserDetails_me {
   __typename: "User";
   /**
@@ -146,6 +164,7 @@ export interface UserDetails_me {
    * List of all user's addresses.
    */
   addresses: (UserDetails_me_addresses | null)[] | null;
+  wishlist: UserDetails_me_wishlist | null;
 }
 
 export interface UserDetails {

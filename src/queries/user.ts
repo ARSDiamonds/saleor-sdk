@@ -7,6 +7,13 @@ export const getUserDetailsQuery = gql`
   query UserDetails {
     me {
       ...User
+      wishlist {
+        id
+        createdAt
+        items(first: 100) {
+          totalCount
+        }
+      }
     }
   }
 `;
