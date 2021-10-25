@@ -130,12 +130,34 @@ export interface UserDetails_me_addresses {
   isDefaultShippingAddress: boolean | null;
 }
 
+export interface UserDetails_me_wishlist_items_edges_node_product {
+  __typename: "Product";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+}
+
+export interface UserDetails_me_wishlist_items_edges_node {
+  __typename: "WishlistItem";
+  /**
+   * The ID of the object.
+   */
+  id: string;
+  product: UserDetails_me_wishlist_items_edges_node_product;
+}
+
+export interface UserDetails_me_wishlist_items_edges {
+  __typename: "WishlistItemCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: UserDetails_me_wishlist_items_edges_node;
+}
+
 export interface UserDetails_me_wishlist_items {
   __typename: "WishlistItemCountableConnection";
-  /**
-   * A total count of items in the collection.
-   */
-  totalCount: number | null;
+  edges: UserDetails_me_wishlist_items_edges[];
 }
 
 export interface UserDetails_me_wishlist {
@@ -144,7 +166,6 @@ export interface UserDetails_me_wishlist {
    * The ID of the object.
    */
   id: string;
-  createdAt: any;
   items: UserDetails_me_wishlist_items;
 }
 
