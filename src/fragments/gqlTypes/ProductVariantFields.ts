@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ProductMediaType, AttributeInputTypeEnum } from "./../../gqlTypes/globalTypes";
+import { ProductMediaType, AttributeInputTypeEnum, MeasurementUnitsEnum } from "./../../gqlTypes/globalTypes";
 
 // ====================================================
 // GraphQL fragment: ProductVariantFields
@@ -129,6 +129,10 @@ export interface ProductVariantFields_attributes_attribute {
    * The input type to use for entering attribute values in the dashboard.
    */
   inputType: AttributeInputTypeEnum | null;
+  /**
+   * The unit of attribute values.
+   */
+  unit: MeasurementUnitsEnum | null;
 }
 
 export interface ProductVariantFields_attributes_values {

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { AttributeInputTypeEnum } from "./../../gqlTypes/globalTypes";
+import { AttributeInputTypeEnum, MeasurementUnitsEnum } from "./../../gqlTypes/globalTypes";
 
 // ====================================================
 // GraphQL fragment: SelectedAttributeFields
@@ -27,6 +27,10 @@ export interface SelectedAttributeFields_attribute {
    * The input type to use for entering attribute values in the dashboard.
    */
   inputType: AttributeInputTypeEnum | null;
+  /**
+   * The unit of attribute values.
+   */
+  unit: MeasurementUnitsEnum | null;
 }
 
 export interface SelectedAttributeFields_values {

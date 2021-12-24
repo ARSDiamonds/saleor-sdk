@@ -33,6 +33,7 @@ export const selectedAttributeFragment = gql`
       name
       slug
       inputType
+      unit
     }
     values {
       id
@@ -71,6 +72,7 @@ export const productVariantFragment = gql`
         name
         slug
         inputType
+        unit
       }
       values {
         id
