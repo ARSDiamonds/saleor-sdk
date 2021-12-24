@@ -37,6 +37,7 @@ export const selectedAttributeFragment = gql`
     values {
       id
       name
+      value
       slug
     }
   }
