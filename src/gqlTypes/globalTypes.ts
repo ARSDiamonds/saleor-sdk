@@ -62,10 +62,12 @@ export enum AttributeInputTypeEnum {
   DATE_TIME = "DATE_TIME",
   DROPDOWN = "DROPDOWN",
   FILE = "FILE",
+  METAL = "METAL",
   MULTISELECT = "MULTISELECT",
   NUMERIC = "NUMERIC",
   REFERENCE = "REFERENCE",
   RICH_TEXT = "RICH_TEXT",
+  STONE = "STONE",
 }
 
 /**

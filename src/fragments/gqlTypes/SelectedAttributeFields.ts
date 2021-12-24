@@ -40,6 +40,10 @@ export interface SelectedAttributeFields_values {
    */
   name: string | null;
   /**
+   * Represents the value of the attribute value.
+   */
+  value: string | null;
+  /**
    * Internal representation of a value (unique per attribute).
    */
   slug: string | null;

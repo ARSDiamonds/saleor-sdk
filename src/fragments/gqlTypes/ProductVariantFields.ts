@@ -142,7 +142,7 @@ export interface ProductVariantFields_attributes_values {
    */
   name: string | null;
   /**
-   * Name of a value displayed in the interface.
+   * Represents the value of the attribute value.
    */
   value: string | null;
   /**
