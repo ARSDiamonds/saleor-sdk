@@ -75,7 +75,7 @@ export const productVariantFragment = gql`
       values {
         id
         name
-        value: name
+        value
         slug
       }
     }
