@@ -1,6 +1,28 @@
 import gql from "graphql-tag";
 import { checkoutPriceFragment } from "./checkout";
 
+export const priceFragment = gql`
+  fragment PriceAmount on Money {
+    amount
+    currency
+  }
+`;
+
+export const priceWithTaxFragment = gql`
+  ${priceFragment}
+  fragment PriceWithTax on TaxedMoney {
+    gross {
+      ...PriceAmount
+    }
+    net {
+      ...PriceAmount
+    }
+    tax {
+      ...PriceAmount
+    }
+  }
+`;
+
 export const baseProductFragment = gql`
   fragment BaseProduct on Product {
     id
@@ -46,6 +68,8 @@ export const selectedAttributeFragment = gql`
 
 export const productVariantFragment = gql`
   ${checkoutPriceFragment}
+  ${priceWithTaxFragment}
+  ${priceFragment}
   fragment ProductVariantFields on ProductVariant {
     id
     sku
@@ -63,7 +87,22 @@ export const productVariantFragment = gql`
         ...Price
       }
       price {
+        ...PriceWithTax
+      }
+      discount {
         ...Price
+      }
+      metalPrice {
+        ...PriceAmount
+      }
+      stonePrice {
+        ...PriceAmount
+      }
+      makingCharge {
+        ...PriceAmount
+      }
+      packagingInsurance {
+        ...PriceAmount
       }
     }
     attributes(variantSelection: $variantSelection) {

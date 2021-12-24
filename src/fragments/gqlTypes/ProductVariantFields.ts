@@ -83,6 +83,18 @@ export interface ProductVariantFields_pricing_price_net {
   currency: string;
 }
 
+export interface ProductVariantFields_pricing_price_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
 export interface ProductVariantFields_pricing_price {
   __typename: "TaxedMoney";
   /**
@@ -93,6 +105,94 @@ export interface ProductVariantFields_pricing_price {
    * Amount of money without taxes.
    */
   net: ProductVariantFields_pricing_price_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductVariantFields_pricing_price_tax;
+}
+
+export interface ProductVariantFields_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricing_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricing_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricing_discount_net;
+}
+
+export interface ProductVariantFields_pricing_metalPrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricing_stonePrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricing_makingCharge {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricing_packagingInsurance {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
 }
 
 export interface ProductVariantFields_pricing {
@@ -109,6 +209,26 @@ export interface ProductVariantFields_pricing {
    * The price, with any discount subtracted.
    */
   price: ProductVariantFields_pricing_price | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductVariantFields_pricing_discount | null;
+  /**
+   * The price of the metal used.
+   */
+  metalPrice: ProductVariantFields_pricing_metalPrice | null;
+  /**
+   * The price of the stones used.
+   */
+  stonePrice: ProductVariantFields_pricing_stonePrice | null;
+  /**
+   * Making charge for the jewellery.
+   */
+  makingCharge: ProductVariantFields_pricing_makingCharge | null;
+  /**
+   * Packaging and insurance charge for the jewellery.
+   */
+  packagingInsurance: ProductVariantFields_pricing_packagingInsurance | null;
 }
 
 export interface ProductVariantFields_attributes_attribute {
