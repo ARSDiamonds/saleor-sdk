@@ -8,7 +8,7 @@
 // ====================================================
 
 export interface CollectionDetails_backgroundImage {
-  __typename: "Image";
+  __typename: "ResponsiveImage";
   /**
    * Alt text for an image.
    */
@@ -17,6 +17,10 @@ export interface CollectionDetails_backgroundImage {
    * The URL of the image.
    */
   url: string;
+  /**
+   * The URL of mobile version of the image.
+   */
+  mobileUrl: string | null;
 }
 
 export interface CollectionDetails {

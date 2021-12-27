@@ -17,6 +17,7 @@ export const categoryFragment = gql`
     backgroundImage {
       alt
       url
+      mobileUrl
     }
     description
   }

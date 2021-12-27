@@ -17,6 +17,7 @@ export const collectionFragment = gql`
     backgroundImage {
       alt
       url
+      mobileUrl
     }
     description
   }
