@@ -62,6 +62,7 @@ export const selectedAttributeFragment = gql`
       name
       value
       slug
+      reference
     }
   }
 `;

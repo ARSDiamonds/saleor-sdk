@@ -641,6 +641,10 @@ export interface ProductDetails_attributes_values {
    * Internal representation of a value (unique per attribute).
    */
   slug: string | null;
+  /**
+   * The ID of the attribute reference.
+   */
+  reference: string | null;
 }
 
 export interface ProductDetails_attributes {
