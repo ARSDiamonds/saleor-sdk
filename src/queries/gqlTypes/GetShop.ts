@@ -7,6 +7,11 @@
 // GraphQL query operation: GetShop
 // ====================================================
 
+export interface GetShop_shop_companyAddress {
+  __typename: "Address";
+  phone: string | null;
+}
+
 export interface GetShop_shop_defaultCountry {
   __typename: "CountryDisplay";
   /**
@@ -33,6 +38,10 @@ export interface GetShop_shop_countries {
 
 export interface GetShop_shop {
   __typename: "Shop";
+  /**
+   * Company address.
+   */
+  companyAddress: GetShop_shop_companyAddress | null;
   /**
    * Display prices with tax in store.
    */
