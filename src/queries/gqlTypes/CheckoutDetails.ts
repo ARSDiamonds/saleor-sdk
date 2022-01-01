@@ -43,6 +43,42 @@ export interface CheckoutDetails_checkout_totalPrice {
   net: CheckoutDetails_checkout_totalPrice_net;
 }
 
+export interface CheckoutDetails_checkout_totalPriceForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface CheckoutDetails_checkout_totalPriceForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface CheckoutDetails_checkout_totalPriceForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: CheckoutDetails_checkout_totalPriceForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: CheckoutDetails_checkout_totalPriceForBankTransfer_net;
+}
+
 export interface CheckoutDetails_checkout_subtotalPrice_gross {
   __typename: "Money";
   /**
@@ -554,6 +590,10 @@ export interface CheckoutDetails_checkout {
    * The sum of the the checkout line prices, with all the taxes,shipping costs, and discounts included.
    */
   totalPrice: CheckoutDetails_checkout_totalPrice | null;
+  /**
+   * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
+   */
+  totalPriceForBankTransfer: CheckoutDetails_checkout_totalPriceForBankTransfer | null;
   /**
    * The price of the checkout before shipping, with taxes included.
    */

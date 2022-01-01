@@ -62,6 +62,42 @@ export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_check
   net: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPrice_net;
 }
 
+export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer_net;
+}
+
 export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_subtotalPrice_gross {
   __typename: "Money";
   /**
@@ -573,6 +609,10 @@ export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_check
    * The sum of the the checkout line prices, with all the taxes,shipping costs, and discounts included.
    */
   totalPrice: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPrice | null;
+  /**
+   * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
+   */
+  totalPriceForBankTransfer: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer | null;
   /**
    * The price of the checkout before shipping, with taxes included.
    */

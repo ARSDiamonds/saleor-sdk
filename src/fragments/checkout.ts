@@ -119,6 +119,9 @@ export const checkoutFragment = gql`
     totalPrice {
       ...Price
     }
+    totalPriceForBankTransfer {
+      ...Price
+    }
     subtotalPrice {
       ...Price
     }
