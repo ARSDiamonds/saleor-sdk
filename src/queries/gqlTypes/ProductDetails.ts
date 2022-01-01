@@ -797,6 +797,130 @@ export interface ProductDetails_product_variants_pricing_discount {
   net: ProductDetails_product_variants_pricing_discount_net;
 }
 
+export interface ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted_net;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransfer_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_priceForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_product_variants_pricing_priceForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_product_variants_pricing_priceForBankTransfer_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductDetails_product_variants_pricing_priceForBankTransfer_tax;
+}
+
+export interface ProductDetails_product_variants_pricing_discountForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_discountForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_product_variants_pricing_discountForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_product_variants_pricing_discountForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_product_variants_pricing_discountForBankTransfer_net;
+}
+
 export interface ProductDetails_product_variants_pricing_metalPrice {
   __typename: "Money";
   /**
@@ -863,6 +987,18 @@ export interface ProductDetails_product_variants_pricing {
    * The discount amount if in sale (null otherwise).
    */
   discount: ProductDetails_product_variants_pricing_discount | null;
+  /**
+   * The price for bank transfer without any discount.
+   */
+  priceForBankTransferUndiscounted: ProductDetails_product_variants_pricing_priceForBankTransferUndiscounted | null;
+  /**
+   * The price for bank transfer, with any discount subtracted.
+   */
+  priceForBankTransfer: ProductDetails_product_variants_pricing_priceForBankTransfer | null;
+  /**
+   * The discount amount for bank transfer if in sale (null otherwise).
+   */
+  discountForBankTransfer: ProductDetails_product_variants_pricing_discountForBankTransfer | null;
   /**
    * The price of the metal used.
    */

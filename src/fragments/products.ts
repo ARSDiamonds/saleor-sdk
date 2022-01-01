@@ -93,6 +93,15 @@ export const productVariantFragment = gql`
       discount {
         ...Price
       }
+      priceForBankTransferUndiscounted {
+        ...Price
+      }
+      priceForBankTransfer {
+        ...PriceWithTax
+      }
+      discountForBankTransfer {
+        ...Price
+      }
       metalPrice {
         ...PriceAmount
       }
