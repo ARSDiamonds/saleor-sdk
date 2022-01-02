@@ -593,6 +593,10 @@ export interface UpdateCheckoutLine_checkoutLinesUpdate_checkout {
    */
   totalPrice: UpdateCheckoutLine_checkoutLinesUpdate_checkout_totalPrice | null;
   /**
+   * Payment gateway charge
+   */
+  paymentGatewayCharge: any | null;
+  /**
    * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
    */
   totalPriceForBankTransfer: UpdateCheckoutLine_checkoutLinesUpdate_checkout_totalPriceForBankTransfer | null;

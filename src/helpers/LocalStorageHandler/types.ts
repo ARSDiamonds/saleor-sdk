@@ -118,6 +118,7 @@ export interface ICheckoutModel {
   availablePaymentGateways?: Checkout_availablePaymentGateways[];
   shippingMethod?: ICheckoutModelShippingMethod | null;
   totalPriceForBankTransfer?: ICheckoutModelPrice | null;
+  paymentGatewayCharge?: string;
 }
 
 export interface IPaymentModel {

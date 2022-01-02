@@ -119,6 +119,7 @@ export const checkoutFragment = gql`
     totalPrice {
       ...Price
     }
+    paymentGatewayCharge
     totalPriceForBankTransfer {
       ...Price
     }

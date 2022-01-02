@@ -593,6 +593,10 @@ export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout {
    */
   totalPrice: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_totalPrice | null;
   /**
+   * Payment gateway charge
+   */
+  paymentGatewayCharge: any | null;
+  /**
    * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
    */
   totalPriceForBankTransfer: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_totalPriceForBankTransfer | null;

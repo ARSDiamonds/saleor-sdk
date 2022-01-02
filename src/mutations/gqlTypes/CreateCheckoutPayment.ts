@@ -593,6 +593,10 @@ export interface CreateCheckoutPayment_checkoutPaymentCreate_checkout {
    */
   totalPrice: CreateCheckoutPayment_checkoutPaymentCreate_checkout_totalPrice | null;
   /**
+   * Payment gateway charge
+   */
+  paymentGatewayCharge: any | null;
+  /**
    * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
    */
   totalPriceForBankTransfer: CreateCheckoutPayment_checkoutPaymentCreate_checkout_totalPriceForBankTransfer | null;

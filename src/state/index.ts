@@ -293,12 +293,32 @@ export class SaleorState extends NamedObservable<StateItems> {
           },
         };
 
+        const totalPriceForBankTransfer = {
+          ...totalPrice,
+          gross: {
+            ...totalPrice.gross,
+            amount: round(
+              totalPrice.gross.amount /
+                (Number(checkout?.paymentGatewayCharge || "3.10") / 100 + 1),
+              2
+            ),
+          },
+          net: {
+            ...totalPrice.net,
+            amount: round(
+              totalPrice.net.amount /
+                (Number(checkout?.paymentGatewayCharge || "3.10") / 100 + 1),
+              2
+            ),
+          },
+        };
+
         return {
           discount,
           shippingPrice,
           subtotalPrice,
           totalPrice,
-          totalPriceForBankTransfer: checkout?.totalPriceForBankTransfer,
+          totalPriceForBankTransfer,
         };
       }
     }

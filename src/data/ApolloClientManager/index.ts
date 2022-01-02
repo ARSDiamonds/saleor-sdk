@@ -993,6 +993,7 @@ export class ApolloClientManager {
     availableShippingMethods,
     shippingMethod,
     totalPriceForBankTransfer,
+    paymentGatewayCharge,
   }: Checkout): ICheckoutModel => ({
     availablePaymentGateways,
     availableShippingMethods: availableShippingMethods
@@ -1021,6 +1022,7 @@ export class ApolloClientManager {
           },
         };
       }),
+    paymentGatewayCharge,
     promoCodeDiscount: {
       discount,
       discountName,

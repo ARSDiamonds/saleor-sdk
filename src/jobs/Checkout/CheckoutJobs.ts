@@ -234,6 +234,7 @@ class CheckoutJobs extends JobsHandler<{}> {
       ...checkout,
       promoCodeDiscount: data?.promoCodeDiscount,
       shippingMethod: data?.shippingMethod,
+      totalPriceForBankTransfer: data?.totalPriceForBankTransfer,
     });
     return { data };
   };
@@ -261,6 +262,7 @@ class CheckoutJobs extends JobsHandler<{}> {
     this.localStorageHandler.setCheckout({
       ...checkout,
       promoCodeDiscount: data?.promoCodeDiscount,
+      totalPriceForBankTransfer: data?.totalPriceForBankTransfer,
     });
     return { data };
   };
@@ -288,6 +290,7 @@ class CheckoutJobs extends JobsHandler<{}> {
     this.localStorageHandler.setCheckout({
       ...checkout,
       promoCodeDiscount: data?.promoCodeDiscount,
+      totalPriceForBankTransfer: data?.totalPriceForBankTransfer,
     });
     return { data };
   };

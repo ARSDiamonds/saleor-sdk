@@ -610,6 +610,10 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpd
    */
   totalPrice: UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_totalPrice | null;
   /**
+   * Payment gateway charge
+   */
+  paymentGatewayCharge: any | null;
+  /**
    * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
    */
   totalPriceForBankTransfer: UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_totalPriceForBankTransfer | null;
@@ -1245,6 +1249,10 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_check
    * The sum of the the checkout line prices, with all the taxes,shipping costs, and discounts included.
    */
   totalPrice: UpdateCheckoutBillingAddressWithEmail_checkoutEmailUpdate_checkout_totalPrice | null;
+  /**
+   * Payment gateway charge
+   */
+  paymentGatewayCharge: any | null;
   /**
    * The sum of the the checkout line prices for bank transfers, with all the taxes,shipping costs, and discounts included.
    */
