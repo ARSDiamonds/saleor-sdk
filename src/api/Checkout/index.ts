@@ -81,6 +81,7 @@ export class SaleorCheckoutAPI extends ErrorListener {
           availableShippingMethods,
           shippingMethod,
           promoCodeDiscount,
+          totalPriceForBankTransfer,
         } = checkout || {};
         this.checkout = {
           billingAddress,
@@ -89,6 +90,7 @@ export class SaleorCheckoutAPI extends ErrorListener {
           shippingAddress,
           shippingMethod,
           token,
+          totalPriceForBankTransfer,
         };
         this.selectedShippingAddressId = selectedShippingAddressId;
         this.selectedBillingAddressId = selectedBillingAddressId;
@@ -409,7 +411,11 @@ export class SaleorCheckoutAPI extends ErrorListener {
 
   createPayment = async (input: CreatePaymentInput): CheckoutResponse => {
     const checkoutId = this.saleorState.checkout?.id;
-    const amount = this.saleorState.summaryPrices?.totalPrice?.gross.amount;
+    const amount =
+      input.gateway === "tummere.payments.bank_transfer"
+        ? this.saleorState.summaryPrices?.totalPriceForBankTransfer?.gross
+            .amount
+        : this.saleorState.summaryPrices?.totalPrice?.gross.amount;
 
     if (checkoutId && amount !== null && amount !== undefined) {
       const { data, dataError } = await this.jobsManager.run(

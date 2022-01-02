@@ -992,6 +992,7 @@ export class ApolloClientManager {
     availablePaymentGateways,
     availableShippingMethods,
     shippingMethod,
+    totalPriceForBankTransfer,
   }: Checkout): ICheckoutModel => ({
     availablePaymentGateways,
     availableShippingMethods: availableShippingMethods
@@ -1028,6 +1029,7 @@ export class ApolloClientManager {
     shippingAddress,
     shippingMethod,
     token,
+    totalPriceForBankTransfer,
   });
 
   private constructPaymentModel = ({

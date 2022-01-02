@@ -298,6 +298,7 @@ export class SaleorState extends NamedObservable<StateItems> {
           shippingPrice,
           subtotalPrice,
           totalPrice,
+          totalPriceForBankTransfer: checkout?.totalPriceForBankTransfer,
         };
       }
     }

@@ -19,5 +19,6 @@ export interface ISaleorStateSummeryPrices {
   shippingPrice?: ICheckoutModelPriceValue;
   subtotalPrice?: ICheckoutModelPrice;
   totalPrice?: ICheckoutModelPrice;
+  totalPriceForBankTransfer?: ICheckoutModelPrice | null;
   discount?: ICheckoutModelPriceValue;
 }

@@ -15,6 +15,7 @@ import {
   IShippingPrice,
   ISubtotalPrice,
   ITotalPrice,
+  ITotalPriceForBankTransfer,
 } from "./types";
 
 export class SaleorCartAPI extends ErrorListener {
@@ -23,6 +24,8 @@ export class SaleorCartAPI extends ErrorListener {
   items: IItems;
 
   totalPrice: ITotalPrice;
+
+  totalPriceForBankTransfer: ITotalPriceForBankTransfer;
 
   subtotalPrice: ISubtotalPrice;
 
@@ -70,12 +73,18 @@ export class SaleorCartAPI extends ErrorListener {
     this.saleorState.subscribeToChange(
       StateItems.SUMMARY_PRICES,
       (summaryPrices: ISaleorStateSummeryPrices) => {
-        const { totalPrice, subtotalPrice, shippingPrice, discount } =
-          summaryPrices || {};
+        const {
+          totalPrice,
+          subtotalPrice,
+          shippingPrice,
+          discount,
+          totalPriceForBankTransfer,
+        } = summaryPrices || {};
         this.totalPrice = totalPrice;
         this.subtotalPrice = subtotalPrice;
         this.shippingPrice = shippingPrice;
         this.discount = discount;
+        this.totalPriceForBankTransfer = totalPriceForBankTransfer;
       }
     );
     this.saleorState.subscribeToChange(

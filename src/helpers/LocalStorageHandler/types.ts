@@ -117,6 +117,7 @@ export interface ICheckoutModel {
   availableShippingMethods?: Checkout_availableShippingMethods[];
   availablePaymentGateways?: Checkout_availablePaymentGateways[];
   shippingMethod?: ICheckoutModelShippingMethod | null;
+  totalPriceForBankTransfer?: ICheckoutModelPrice | null;
 }
 
 export interface IPaymentModel {
