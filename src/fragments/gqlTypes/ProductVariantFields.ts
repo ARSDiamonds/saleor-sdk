@@ -367,6 +367,350 @@ export interface ProductVariantFields_pricing {
   packagingInsurance: ProductVariantFields_pricing_packagingInsurance | null;
 }
 
+export interface ProductVariantFields_pricingInUsd_priceUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_priceUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_priceUndiscounted_net;
+}
+
+export interface ProductVariantFields_pricingInUsd_price_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_price_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_price_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_price {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_price_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_price_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductVariantFields_pricingInUsd_price_tax;
+}
+
+export interface ProductVariantFields_pricingInUsd_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_discount_net;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted_net;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransfer_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_priceForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_priceForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_priceForBankTransfer_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductVariantFields_pricingInUsd_priceForBankTransfer_tax;
+}
+
+export interface ProductVariantFields_pricingInUsd_discountForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_discountForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_discountForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductVariantFields_pricingInUsd_discountForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductVariantFields_pricingInUsd_discountForBankTransfer_net;
+}
+
+export interface ProductVariantFields_pricingInUsd_metalPrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_stonePrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_makingCharge {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd_packagingInsurance {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductVariantFields_pricingInUsd {
+  __typename: "VariantPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The price without any discount.
+   */
+  priceUndiscounted: ProductVariantFields_pricingInUsd_priceUndiscounted | null;
+  /**
+   * The price, with any discount subtracted.
+   */
+  price: ProductVariantFields_pricingInUsd_price | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductVariantFields_pricingInUsd_discount | null;
+  /**
+   * The price for bank transfer without any discount.
+   */
+  priceForBankTransferUndiscounted: ProductVariantFields_pricingInUsd_priceForBankTransferUndiscounted | null;
+  /**
+   * The price for bank transfer, with any discount subtracted.
+   */
+  priceForBankTransfer: ProductVariantFields_pricingInUsd_priceForBankTransfer | null;
+  /**
+   * The discount amount for bank transfer if in sale (null otherwise).
+   */
+  discountForBankTransfer: ProductVariantFields_pricingInUsd_discountForBankTransfer | null;
+  /**
+   * The price of the metal used.
+   */
+  metalPrice: ProductVariantFields_pricingInUsd_metalPrice | null;
+  /**
+   * The price of the stones used.
+   */
+  stonePrice: ProductVariantFields_pricingInUsd_stonePrice | null;
+  /**
+   * Making charge for the jewellery.
+   */
+  makingCharge: ProductVariantFields_pricingInUsd_makingCharge | null;
+  /**
+   * Packaging and insurance charge for the jewellery.
+   */
+  packagingInsurance: ProductVariantFields_pricingInUsd_packagingInsurance | null;
+}
+
 export interface ProductVariantFields_attributes_attribute {
   __typename: "Attribute";
   /**
@@ -443,6 +787,10 @@ export interface ProductVariantFields {
    * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductVariantFields_pricing | null;
+  /**
+   * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: ProductVariantFields_pricingInUsd | null;
   /**
    * List of attributes assigned to this variant.
    */

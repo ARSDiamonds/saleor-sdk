@@ -115,6 +115,39 @@ export const productVariantFragment = gql`
         ...PriceAmount
       }
     }
+    pricingInUsd {
+      onSale
+      priceUndiscounted {
+        ...Price
+      }
+      price {
+        ...PriceWithTax
+      }
+      discount {
+        ...Price
+      }
+      priceForBankTransferUndiscounted {
+        ...Price
+      }
+      priceForBankTransfer {
+        ...PriceWithTax
+      }
+      discountForBankTransfer {
+        ...Price
+      }
+      metalPrice {
+        ...PriceAmount
+      }
+      stonePrice {
+        ...PriceAmount
+      }
+      makingCharge {
+        ...PriceAmount
+      }
+      packagingInsurance {
+        ...PriceAmount
+      }
+    }
     attributes(variantSelection: $variantSelection) {
       attribute {
         id
@@ -137,6 +170,28 @@ export const productPricingFragment = gql`
   ${checkoutPriceFragment}
   fragment ProductPricingField on Product {
     pricing {
+      onSale
+      discount {
+        ...Price
+      }
+      priceRangeUndiscounted {
+        start {
+          ...Price
+        }
+        stop {
+          ...Price
+        }
+      }
+      priceRange {
+        start {
+          ...Price
+        }
+        stop {
+          ...Price
+        }
+      }
+    }
+    pricingInUsd {
       onSale
       discount {
         ...Price

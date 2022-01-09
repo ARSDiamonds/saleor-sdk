@@ -267,6 +267,230 @@ export interface ProductList_products_edges_node_pricing {
   priceRange: ProductList_products_edges_node_pricing_priceRange | null;
 }
 
+export interface ProductList_products_edges_node_pricingInUsd_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricingInUsd_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricingInUsd_discount_net;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_net;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_net;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop | null;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricingInUsd_priceRange_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricingInUsd_priceRange_start_net;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductList_products_edges_node_pricingInUsd_priceRange_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductList_products_edges_node_pricingInUsd_priceRange_stop_net;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd_priceRange {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductList_products_edges_node_pricingInUsd_priceRange_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductList_products_edges_node_pricingInUsd_priceRange_stop | null;
+}
+
+export interface ProductList_products_edges_node_pricingInUsd {
+  __typename: "ProductPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductList_products_edges_node_pricingInUsd_discount | null;
+  /**
+   * The undiscounted price range of the product variants.
+   */
+  priceRangeUndiscounted: ProductList_products_edges_node_pricingInUsd_priceRangeUndiscounted | null;
+  /**
+   * The discounted price range of the product variants.
+   */
+  priceRange: ProductList_products_edges_node_pricingInUsd_priceRange | null;
+}
+
 export interface ProductList_products_edges_node {
   __typename: "Product";
   /**
@@ -301,6 +525,10 @@ export interface ProductList_products_edges_node {
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductList_products_edges_node_pricing | null;
+  /**
+   * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: ProductList_products_edges_node_pricingInUsd | null;
 }
 
 export interface ProductList_products_edges {

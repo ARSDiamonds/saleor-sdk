@@ -267,6 +267,230 @@ export interface ProductDetails_pricing {
   priceRange: ProductDetails_pricing_priceRange | null;
 }
 
+export interface ProductDetails_pricingInUsd_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricingInUsd_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricingInUsd_discount_net;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricingInUsd_priceRangeUndiscounted_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricingInUsd_priceRangeUndiscounted_start_net;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricingInUsd_priceRangeUndiscounted_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricingInUsd_priceRangeUndiscounted_stop_net;
+}
+
+export interface ProductDetails_pricingInUsd_priceRangeUndiscounted {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductDetails_pricingInUsd_priceRangeUndiscounted_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductDetails_pricingInUsd_priceRangeUndiscounted_stop | null;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricingInUsd_priceRange_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricingInUsd_priceRange_start_net;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_pricingInUsd_priceRange_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_pricingInUsd_priceRange_stop_net;
+}
+
+export interface ProductDetails_pricingInUsd_priceRange {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductDetails_pricingInUsd_priceRange_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductDetails_pricingInUsd_priceRange_stop | null;
+}
+
+export interface ProductDetails_pricingInUsd {
+  __typename: "ProductPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductDetails_pricingInUsd_discount | null;
+  /**
+   * The undiscounted price range of the product variants.
+   */
+  priceRangeUndiscounted: ProductDetails_pricingInUsd_priceRangeUndiscounted | null;
+  /**
+   * The discounted price range of the product variants.
+   */
+  priceRange: ProductDetails_pricingInUsd_priceRange | null;
+}
+
 export interface ProductDetails_category_products_edges_node_thumbnail {
   __typename: "Image";
   /**
@@ -525,6 +749,230 @@ export interface ProductDetails_category_products_edges_node_pricing {
   priceRange: ProductDetails_category_products_edges_node_pricing_priceRange | null;
 }
 
+export interface ProductDetails_category_products_edges_node_pricingInUsd_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricingInUsd_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricingInUsd_discount_net;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start_net;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop_net;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted_stop | null;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start_net;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop_net;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd_priceRange {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: ProductDetails_category_products_edges_node_pricingInUsd_priceRange_stop | null;
+}
+
+export interface ProductDetails_category_products_edges_node_pricingInUsd {
+  __typename: "ProductPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductDetails_category_products_edges_node_pricingInUsd_discount | null;
+  /**
+   * The undiscounted price range of the product variants.
+   */
+  priceRangeUndiscounted: ProductDetails_category_products_edges_node_pricingInUsd_priceRangeUndiscounted | null;
+  /**
+   * The discounted price range of the product variants.
+   */
+  priceRange: ProductDetails_category_products_edges_node_pricingInUsd_priceRange | null;
+}
+
 export interface ProductDetails_category_products_edges_node_category {
   __typename: "Category";
   /**
@@ -569,6 +1017,10 @@ export interface ProductDetails_category_products_edges_node {
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductDetails_category_products_edges_node_pricing | null;
+  /**
+   * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: ProductDetails_category_products_edges_node_pricingInUsd | null;
   category: ProductDetails_category_products_edges_node_category | null;
 }
 
@@ -1017,6 +1469,350 @@ export interface ProductDetails_variants_pricing {
   packagingInsurance: ProductDetails_variants_pricing_packagingInsurance | null;
 }
 
+export interface ProductDetails_variants_pricingInUsd_priceUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_priceUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_priceUndiscounted_net;
+}
+
+export interface ProductDetails_variants_pricingInUsd_price_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_price_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_price_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_price {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_price_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_price_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductDetails_variants_pricingInUsd_price_tax;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discount_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discount_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_discount_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_discount_net;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted_net;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransfer_tax {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_priceForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_priceForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_priceForBankTransfer_net;
+  /**
+   * Amount of taxes.
+   */
+  tax: ProductDetails_variants_pricingInUsd_priceForBankTransfer_tax;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discountForBankTransfer_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discountForBankTransfer_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_discountForBankTransfer {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: ProductDetails_variants_pricingInUsd_discountForBankTransfer_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: ProductDetails_variants_pricingInUsd_discountForBankTransfer_net;
+}
+
+export interface ProductDetails_variants_pricingInUsd_metalPrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_stonePrice {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_makingCharge {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd_packagingInsurance {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface ProductDetails_variants_pricingInUsd {
+  __typename: "VariantPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The price without any discount.
+   */
+  priceUndiscounted: ProductDetails_variants_pricingInUsd_priceUndiscounted | null;
+  /**
+   * The price, with any discount subtracted.
+   */
+  price: ProductDetails_variants_pricingInUsd_price | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: ProductDetails_variants_pricingInUsd_discount | null;
+  /**
+   * The price for bank transfer without any discount.
+   */
+  priceForBankTransferUndiscounted: ProductDetails_variants_pricingInUsd_priceForBankTransferUndiscounted | null;
+  /**
+   * The price for bank transfer, with any discount subtracted.
+   */
+  priceForBankTransfer: ProductDetails_variants_pricingInUsd_priceForBankTransfer | null;
+  /**
+   * The discount amount for bank transfer if in sale (null otherwise).
+   */
+  discountForBankTransfer: ProductDetails_variants_pricingInUsd_discountForBankTransfer | null;
+  /**
+   * The price of the metal used.
+   */
+  metalPrice: ProductDetails_variants_pricingInUsd_metalPrice | null;
+  /**
+   * The price of the stones used.
+   */
+  stonePrice: ProductDetails_variants_pricingInUsd_stonePrice | null;
+  /**
+   * Making charge for the jewellery.
+   */
+  makingCharge: ProductDetails_variants_pricingInUsd_makingCharge | null;
+  /**
+   * Packaging and insurance charge for the jewellery.
+   */
+  packagingInsurance: ProductDetails_variants_pricingInUsd_packagingInsurance | null;
+}
+
 export interface ProductDetails_variants_attributes_attribute {
   __typename: "Attribute";
   /**
@@ -1094,6 +1890,10 @@ export interface ProductDetails_variants {
    */
   pricing: ProductDetails_variants_pricing | null;
   /**
+   * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: ProductDetails_variants_pricingInUsd | null;
+  /**
    * List of attributes assigned to this variant.
    */
   attributes: ProductDetails_variants_attributes[];
@@ -1159,6 +1959,10 @@ export interface ProductDetails {
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: ProductDetails_pricing | null;
+  /**
+   * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: ProductDetails_pricingInUsd | null;
   description: any | null;
   category: ProductDetails_category | null;
   /**
