@@ -373,9 +373,10 @@ export class ApolloClientManager {
       try {
         const observable = this.client.watchQuery<CheckoutProductVariants, any>(
           {
+            fetchPolicy: "network-only",
             query: CheckoutQueries.checkoutProductVariants,
             variables: {
-              channel: "channel-inr",
+              channel,
               ids: idsOfMissingVariants,
             },
           }

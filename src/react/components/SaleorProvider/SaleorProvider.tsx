@@ -29,7 +29,6 @@ const SaleorProvider: React.FC<IProps> = ({
     const manager = new SaleorManager(config, apolloConfig);
 
     getSaleorApiAndClient(manager);
-    window.localStorage.clear();
   }, [config]);
 
   if (client && context) {
