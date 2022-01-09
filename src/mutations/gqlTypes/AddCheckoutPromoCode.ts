@@ -409,6 +409,94 @@ export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_varian
   price: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricing_price | null;
 }
 
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted_net;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price_gross {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price_net {
+  __typename: "Money";
+  /**
+   * Amount of money.
+   */
+  amount: number;
+  /**
+   * Currency code.
+   */
+  currency: string;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price_gross;
+  /**
+   * Amount of money without taxes.
+   */
+  net: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price_net;
+}
+
+export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd {
+  __typename: "VariantPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The price without any discount.
+   */
+  priceUndiscounted: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_priceUndiscounted | null;
+  /**
+   * The price, with any discount subtracted.
+   */
+  price: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd_price | null;
+}
+
 export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_attributes_attribute {
   __typename: "Attribute";
   /**
@@ -513,6 +601,10 @@ export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_varian
    * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
    */
   pricing: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricing | null;
+  /**
+   * Lists the storefront variant's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricingInUsd: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_lines_variant_pricingInUsd | null;
   /**
    * List of attributes assigned to this variant.
    */

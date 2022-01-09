@@ -51,6 +51,15 @@ export const checkoutProductVariantFragment = gql`
         ...Price
       }
     }
+    pricingInUsd {
+      onSale
+      priceUndiscounted {
+        ...Price
+      }
+      price {
+        ...Price
+      }
+    }
     attributes {
       attribute {
         id

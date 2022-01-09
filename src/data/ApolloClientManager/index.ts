@@ -407,7 +407,12 @@ export class ApolloClientManager {
           const existingLine = checkoutlines?.find(
             line => line.variant.id === edge.node.id
           );
-          const variantPricing = edge.node.pricing?.price;
+          const pricing =
+            channel === "default-channel"
+              ? edge.node.pricingInUsd
+              : edge.node.pricing;
+          const variantPricing = pricing?.price;
+
           const totalPrice = variantPricing
             ? {
                 gross: {
@@ -431,7 +436,7 @@ export class ApolloClientManager {
               attributes: edge.node.attributes,
               id: edge.node.id,
               name: edge.node.name,
-              pricing: edge.node.pricing,
+              pricing,
               product: edge.node.product,
               quantityAvailable: edge.node.quantityAvailable,
               sku: edge.node.sku,
