@@ -4,6 +4,7 @@ import {
   Checkout_lines_variant_pricing,
   Checkout_lines_variant_product,
   Checkout_availablePaymentGateways,
+  Checkout_lines_variant_pricingInUsd,
 } from "../../fragments/gqlTypes/Checkout";
 import { Payment_total } from "../../fragments/gqlTypes/Payment";
 import { IQueuedJobs } from "../../jobs/QueuedJobs";
@@ -30,6 +31,7 @@ export interface ICheckoutModelLineVariant {
   name?: string;
   sku?: string;
   pricing?: Checkout_lines_variant_pricing | null;
+  pricingInUsd?: Checkout_lines_variant_pricingInUsd | null;
   product?: Checkout_lines_variant_product;
   attributes?: Checkout_lines_variant_attributes[];
 }

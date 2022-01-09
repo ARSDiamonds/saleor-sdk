@@ -446,7 +446,10 @@ export class ApolloClientManager {
       : [];
 
     const linesWithProperVariantUpdated = linesWithProperVariant.map(line => {
-      const variantPricing = line.variant.pricing?.price;
+      const variantPricing =
+        channel === "default-channel"
+          ? line.variant.pricingInUsd?.price
+          : line.variant.pricing?.price;
       const totalPrice = variantPricing
         ? {
             gross: {
@@ -1021,6 +1024,7 @@ export class ApolloClientManager {
             id: itemVariant!.id,
             name: itemVariant?.name,
             pricing: itemVariant?.pricing,
+            pricingInUsd: itemVariant?.pricingInUsd,
             product: itemVariant?.product,
             quantityAvailable: itemVariant?.quantityAvailable,
             sku: itemVariant?.sku,
