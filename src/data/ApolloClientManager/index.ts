@@ -375,7 +375,7 @@ export class ApolloClientManager {
           {
             query: CheckoutQueries.checkoutProductVariants,
             variables: {
-              channel,
+              channel: "channel-inr",
               ids: idsOfMissingVariants,
             },
           }
