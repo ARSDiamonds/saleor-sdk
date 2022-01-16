@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ApolloClient from "apollo-client";
 import { ApolloProvider } from "react-apollo";
 
+import { LocalStorageItems } from "../../../helpers/LocalStorageHandler/types";
 import { SaleorManager } from "../../..";
 import { SaleorContext, SaleorContextType } from "../../context";
 
@@ -29,7 +30,7 @@ const SaleorProvider: React.FC<IProps> = ({
     const manager = new SaleorManager(config, apolloConfig);
 
     getSaleorApiAndClient(manager);
-    window.localStorage.clear();
+    window.localStorage.removeItem(LocalStorageItems.CHECKOUT);
   }, [config]);
 
   if (client && context) {
