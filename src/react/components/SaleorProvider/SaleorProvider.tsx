@@ -30,7 +30,7 @@ const SaleorProvider: React.FC<IProps> = ({
     const manager = new SaleorManager(config, apolloConfig);
 
     getSaleorApiAndClient(manager);
-    if (context?.config.channel !== config.channel) {
+    if (context && context?.config.channel !== config.channel) {
       window.localStorage.removeItem(LocalStorageItems.CHECKOUT);
     }
   }, [config.channel]);
