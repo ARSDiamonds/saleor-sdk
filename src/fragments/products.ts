@@ -75,6 +75,7 @@ export const productVariantFragment = gql`
     id
     sku
     name
+    metalWeight
     quantityAvailable(countryCode: $countryCode)
     media {
       id

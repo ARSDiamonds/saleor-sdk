@@ -776,6 +776,10 @@ export interface ProductVariantFields {
   sku: string;
   name: string;
   /**
+   * Metal weight calculated as per variant size
+   */
+  metalWeight: string;
+  /**
    * Quantity of a product available for sale in one checkout.
    */
   quantityAvailable: number;
