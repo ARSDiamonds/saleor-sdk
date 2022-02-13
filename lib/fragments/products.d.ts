@@ -1,9 +1,0 @@
-export declare const priceFragment: import("graphql").DocumentNode;
-export declare const priceWithTaxFragment: import("graphql").DocumentNode;
-export declare const baseProductFragment: import("graphql").DocumentNode;
-export declare const selectedAttributeFragment: import("graphql").DocumentNode;
-export declare const productVariantFragment: import("graphql").DocumentNode;
-export declare const productPricingFragment: import("graphql").DocumentNode;
-export declare const reviewFragment: import("graphql").DocumentNode;
-export declare const productReviewsFragment: import("graphql").DocumentNode;
-export declare const productFragment: import("graphql").DocumentNode;
