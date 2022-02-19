@@ -75,7 +75,6 @@ export const productVariantFragment = gql`
     id
     sku
     name
-    metalWeight
     quantityAvailable(countryCode: $countryCode)
     media {
       id
@@ -103,6 +102,7 @@ export const productVariantFragment = gql`
       discountForBankTransfer {
         ...Price
       }
+      metalWeight
       metalPrice {
         ...PriceAmount
       }
@@ -136,6 +136,7 @@ export const productVariantFragment = gql`
       discountForBankTransfer {
         ...Price
       }
+      metalWeight
       metalPrice {
         ...PriceAmount
       }

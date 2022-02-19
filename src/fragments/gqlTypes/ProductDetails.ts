@@ -1452,6 +1452,10 @@ export interface ProductDetails_variants_pricing {
    */
   discountForBankTransfer: ProductDetails_variants_pricing_discountForBankTransfer | null;
   /**
+   * Metal weight calculated as per variant size
+   */
+  metalWeight: any;
+  /**
    * The price of the metal used.
    */
   metalPrice: ProductDetails_variants_pricing_metalPrice | null;
@@ -1796,6 +1800,10 @@ export interface ProductDetails_variants_pricingInUsd {
    */
   discountForBankTransfer: ProductDetails_variants_pricingInUsd_discountForBankTransfer | null;
   /**
+   * Metal weight calculated as per variant size
+   */
+  metalWeight: any;
+  /**
    * The price of the metal used.
    */
   metalPrice: ProductDetails_variants_pricingInUsd_metalPrice | null;
@@ -1877,10 +1885,6 @@ export interface ProductDetails_variants {
   id: string;
   sku: string;
   name: string;
-  /**
-   * Metal weight calculated as per variant size
-   */
-  metalWeight: string;
   /**
    * Quantity of a product available for sale in one checkout.
    */

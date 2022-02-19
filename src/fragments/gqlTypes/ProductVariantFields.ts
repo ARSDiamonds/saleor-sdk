@@ -350,6 +350,10 @@ export interface ProductVariantFields_pricing {
    */
   discountForBankTransfer: ProductVariantFields_pricing_discountForBankTransfer | null;
   /**
+   * Metal weight calculated as per variant size
+   */
+  metalWeight: any;
+  /**
    * The price of the metal used.
    */
   metalPrice: ProductVariantFields_pricing_metalPrice | null;
@@ -694,6 +698,10 @@ export interface ProductVariantFields_pricingInUsd {
    */
   discountForBankTransfer: ProductVariantFields_pricingInUsd_discountForBankTransfer | null;
   /**
+   * Metal weight calculated as per variant size
+   */
+  metalWeight: any;
+  /**
    * The price of the metal used.
    */
   metalPrice: ProductVariantFields_pricingInUsd_metalPrice | null;
@@ -775,10 +783,6 @@ export interface ProductVariantFields {
   id: string;
   sku: string;
   name: string;
-  /**
-   * Metal weight calculated as per variant size
-   */
-  metalWeight: string;
   /**
    * Quantity of a product available for sale in one checkout.
    */
